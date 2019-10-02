@@ -6,11 +6,21 @@
 /*
  * Your customer ViewModel code goes here
  */
-define([],
- function() {
+define(['utils/app-util'],
+ function(AppUtil) {
 
     function CustomerViewModel() {
       var self = this;
+
+      // Called from the buttom, executed function itself.
+      self.test = AppUtil.someFunction;
+
+      self.otherFunction = () => {
+        // Calling it within code here
+        AppUtil.someFunction();
+      }
+
+
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
 
